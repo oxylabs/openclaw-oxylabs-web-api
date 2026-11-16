@@ -1,0 +1,93 @@
+{
+  "id": "oxylabs",
+  "name": "Oxylabs Web API",
+  "description": "Web search and page fetching through the Oxylabs Web API.",
+  "categories": ["web"],
+  "activation": {
+    "onStartup": false
+  },
+  "setup": {
+    "providers": [
+      {
+        "id": "oxylabs",
+        "envVars": ["OXYLABS_WEB_API_KEY"]
+      }
+    ]
+  },
+  "uiHints": {
+    "webSearch.apiKey": {
+      "label": "Oxylabs Web API key",
+      "help": "Oxylabs Web API key for web search (fallback: OXYLABS_WEB_API_KEY env var).",
+      "sensitive": true,
+      "placeholder": "your-web-api-key"
+    },
+    "webSearch.location": {
+      "label": "Default search location",
+      "help": "Two-letter country code that search results are localised to when a call does not give one, e.g. US or DE."
+    },
+    "webFetch.apiKey": {
+      "label": "Oxylabs Web API key (fetch)",
+      "help": "Optional. Falls back to the web search key, then the OXYLABS_WEB_API_KEY env var.",
+      "sensitive": true,
+      "placeholder": "your-web-api-key"
+    },
+    "webFetch.renderJs": {
+      "label": "Render JavaScript",
+      "help": "Render pages in a browser before extracting them. Slower; turn on for JavaScript-heavy sites."
+    }
+  },
+  "contracts": {
+    "webSearchProviders": ["oxylabs"],
+    "webFetchProviders": ["oxylabs"]
+  },
+  "configGroups": [
+    {
+      "id": "web-search",
+      "title": "Web search",
+      "order": 10,
+      "properties": ["webSearch"]
+    },
+    {
+      "id": "web-fetch",
+      "title": "Web fetch",
+      "order": 20,
+      "properties": ["webFetch"]
+    }
+  ],
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "webSearch": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "apiKey": {
+            "type": ["string", "object"]
+          },
+          "location": {
+            "type": "string",
+            "pattern": "^[A-Za-z]{2}$"
+          }
+        }
+      },
+      "webFetch": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "apiKey": {
+            "type": ["string", "object"]
+          },
+          "renderJs": {
+            "type": "boolean"
+          },
+          "timeoutSeconds": {
+            "type": "number",
+            "minimum": 10,
+            "maximum": 300
+          }
+        }
+      }
+    }
+  }
+}

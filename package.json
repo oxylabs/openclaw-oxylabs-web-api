@@ -1,0 +1,74 @@
+{
+  "name": "openclaw-oxylabs-web-api",
+  "version": "0.1.0",
+  "description": "OpenClaw web_search and web_fetch provider powered by the Oxylabs Web API: geo-targeted search and scraping of JavaScript-heavy and bot-protected pages.",
+  "license": "MIT",
+  "type": "module",
+  "homepage": "https://github.com/oxylabs/openclaw-oxylabs-web-api",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oxylabs/openclaw-oxylabs-web-api.git"
+  },
+  "author": {
+    "name": "Oxylabs",
+    "email": "giedrius.stankauskas@oxylabs.io"
+  },
+  "keywords": [
+    "openclaw",
+    "openclaw-plugin",
+    "oxylabs",
+    "web-search",
+    "web-fetch",
+    "web-scraping"
+  ],
+  "files": [
+    "dist",
+    "!dist/**/*.tsbuildinfo",
+    "openclaw.plugin.json",
+    "assets"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "check": "tsc --noEmit",
+    "test": "tsc -p tsconfig.test.json && node --test '.test-build/test/**/*.test.js'",
+    "test:live": "node --env-file-if-exists=.env scripts/live-test.mjs",
+    "prepack": "npm run build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "openclaw": ">=2026.11.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "openclaw": "2026.11.3",
+    "typescript": "~5.9.3"
+  },
+  "engines": {
+    "node": ">=24.16.0"
+  },
+  "openclaw": {
+    "extensions": [
+      "./dist/index.js"
+    ],
+    "install": {
+      "npmSpec": "openclaw-oxylabs-web-api",
+      "defaultChoice": "npm",
+      "minHostVersion": ">=2026.11.3"
+    },
+    "compat": {
+      "pluginApi": ">=2026.11.3"
+    },
+    "build": {
+      "openclawVersion": "2026.11.3",
+      "pluginSdkVersion": "2026.11.3"
+    }
+  }
+}
