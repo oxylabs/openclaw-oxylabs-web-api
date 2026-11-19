@@ -1,7 +1,7 @@
 export const PLUGIN_ID = "oxylabs";
 export const PROVIDER_ID = "oxylabs";
 // Kept in step with package.json by test/constants.test.ts.
-export const VERSION = "0.1.0";
+export const VERSION = "0.1.1";
 
 export const API_BASE_URL = "https://webapi.oxylabs.io";
 export const API_KEY_ENV_VARS = ["OXYLABS_WEB_API_KEY"];

@@ -15,10 +15,10 @@ It plugs into the tools OpenClaw already has, so agents keep calling `web_search
 ## Install
 
 ```bash
-openclaw plugins install npm:openclaw-oxylabs-web-api
+openclaw plugins install npm:openclaw-oxylabs-web-api --force
 ```
 
-OpenClaw asks you to accept the plugin's capabilities (it makes network requests to `webapi.oxylabs.io`). In scripts, add `--accept-capabilities`.
+OpenClaw asks for `--force` on any plugin installed straight from npm rather than from ClawHub, after warning that the source is outside ClawHub review. It also asks you to accept the plugin's capabilities (it makes network requests to `webapi.oxylabs.io`). In scripts, add `--accept-capabilities`.
 
 ## Configure
 
@@ -87,7 +87,7 @@ To try a local build in OpenClaw:
 
 ```bash
 npm pack --pack-destination /tmp
-openclaw plugins install npm-pack:/tmp/openclaw-oxylabs-web-api-0.1.0.tgz --force --accept-capabilities
+openclaw plugins install npm-pack:/tmp/openclaw-oxylabs-web-api-0.1.1.tgz --force --accept-capabilities
 openclaw plugins inspect oxylabs --runtime --json
 ```
 

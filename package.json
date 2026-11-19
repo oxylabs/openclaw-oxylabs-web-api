@@ -1,6 +1,6 @@
 {
   "name": "openclaw-oxylabs-web-api",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "OpenClaw web_search and web_fetch provider powered by the Oxylabs Web API: geo-targeted search and scraping of JavaScript-heavy and bot-protected pages.",
   "license": "MIT",
   "type": "module",
