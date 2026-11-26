@@ -1,6 +1,6 @@
 # Oxylabs Web API for OpenClaw
 
-[![Web API](https://github.com/oxylabs/openclaw-oxylabs-web-api/blob/main/Github%20repositories%20banner%20v1%401x.png)](https://oxylabs.io/products/web-api?utm_source=github&utm_medium=referral&utm_content=web_api_waitinglist&groupid=877)
+[![Web API](https://github.com/oxylabs/openclaw-oxylabs-web-api/blob/main/Github%20repositories%20banner%20v1%401x.png)](https://oxylabs.io/products/web-api?utm_source=github&utm_medium=referral&utm_content=openclaw-oxylabs-web-api&utm_campaign=banner&groupid=877)
 
 <p align="left">
   <a href="https://dashboard.oxylabs.io"><img src="https://img.shields.io/badge/%F0%9F%9A%80_Get_Started-FF6B35?style=for-the-badge" alt="Get started"></a>
@@ -10,7 +10,7 @@
   <a href="https://www.youtube.com/@oxylabs"><img src="https://img.shields.io/badge/%E2%96%B6%EF%B8%8F_YouTube-FF0000?style=for-the-badge" alt="YouTube"></a>
 </p>
 
-An [OpenClaw](https://openclaw.ai) plugin that adds the [Oxylabs Web API](https://oxylabs.io/products/web-api) as a provider for OpenClaw's built-in `web_search` and `web_fetch` tools.
+An [OpenClaw](https://openclaw.ai) plugin that adds the [Oxylabs Web API](https://oxylabs.io/products/web-api?utm_source=github&utm_medium=referral&utm_content=openclaw-oxylabs-web-api&groupid=877) as a provider for OpenClaw's built-in `web_search` and `web_fetch` tools.
 
 - **web_search**: Google results with titles, URLs and a short outline of each page. Pass a country (`location: "DE"`) to see results as users in that country do.
 - **web_fetch**: any page as Markdown or plain text, including JavaScript-heavy pages (turn on `renderJs`) and pages that block plain HTTP clients.
